@@ -3,9 +3,11 @@ class Dictionary:
         self.entries = {}
 
     def newentry(self, word: str, definition: str) -> None:
-        self.entries[word] = definition
+        key = word.lower()
+        self.entries[key] = definition
 
     def look(self, word: str) -> str:
-        if word in self.entries:
-            return self.entries[word]
+        key = word.lower()
+        if key in self.entries:
+            return self.entries[key]
         return f"Can't find entry for {word}"
